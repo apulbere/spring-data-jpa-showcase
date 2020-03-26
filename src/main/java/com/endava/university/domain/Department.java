@@ -1,6 +1,7 @@
 package com.endava.university.domain;
 
-import lombok.*;
+import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,7 +22,6 @@ public class Department {
     @OneToOne
     private Staff chair;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy="department",
-            cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="department")
     private List<Course> courses = new ArrayList<>();
 }

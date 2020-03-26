@@ -26,7 +26,6 @@ public class Student {
     @Column
     private LocalDate birthDate;
 
-    @OneToMany(fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+    @OneToMany
     private List<Course> courses = new ArrayList<>();
 }
